@@ -3,12 +3,8 @@
 int main(int argc, char argv[]){
    int board[8][8];
    struct Board checkerBoard;
-   for( int i=0; i<8;i++){
-      for( int I=0; I<8;I++){
-         (void)fprintf(stdout,"%d",checkerBoard.board[i][I]);
-      }
-   }
-   HelloWorld(board);
+   HelloWorld(checkerBoard.board);
+   //HelloWorld(board);
    /*struct Board board;
    initialize(board.board);
    for(int space=0;space<8; space++){
