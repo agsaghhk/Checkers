@@ -4,12 +4,54 @@ struct Board {
 };
 
 void initialize( int board[][8]){
-   for(int i=0;i<8;i++){
-      for(int I=0;I<8;I++){
-         board[i][I]=0;
-         (void) fprintf(stdout, "%d",board[i][I]);
+   for(int index=0;index<8;index++){
+      for(int Index=0;Index<8;Index++){
+         board[index][Index]=0;
+         (void) fprintf(stdout, "%d ",board[index][Index]);
       }
       (void)fprintf(stdout,"\n");
    }
 }
 
+void gameStart( int board[][8]){
+   for(int index=0;index<8;index++){
+      if(index<3){
+         if(index%2==0){
+            for(int Index=0;Index<8;Index+=2){
+               board[index][Index]=1;
+            }
+         }
+         else{
+            for(int Index=1;Index<8;Index+=2){
+               board[index][Index]=1;
+            }
+         }
+      }
+      if(index>4){
+         if(index%2==1){
+            for(int Index=0;Index<8;Index+=2){
+               board[index][Index]=2;
+            }
+         }
+         else{
+            for(int Index=1;Index<8;Index+=2){
+               board[index][Index]=2;
+            }
+         }
+      }
+   }
+}
+
+void print( int board[][8]){
+   for(int index=0;index<8;index++){
+      for(int Index=0; Index<8;Index++){
+         if(board[index][Index]==1)
+            (void)fprintf(stdout,"b ");
+         else if(board[index][Index]==2)
+            (void)fprintf(stdout,"r ");
+         else
+            (void)fprintf(stdout,"  ");
+      }
+      (void)fprintf(stdout,"\n");
+   }
+}
