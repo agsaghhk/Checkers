@@ -54,4 +54,5 @@ void print( int board[][8]){
       }
       (void)fprintf(stdout,"\n");
    }
+   (void) fprintf(stdout,"---------------\n\n");
 }
