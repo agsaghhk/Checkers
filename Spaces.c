@@ -1,4 +1,4 @@
 struct Spaces{
-   struct Checker piece;
    int occupied;
-}
+   struct Piece piece;
+};
